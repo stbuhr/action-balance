@@ -1,0 +1,55 @@
+@keyframes blinking-icon {
+  0% {
+    opacity: 1;
+  }
+  5% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0;
+  }
+  55% {
+    opacity: 0;
+  }
+  95% {
+    opacity: 1;
+  }
+}
+
+.blinking {
+  position: relative;
+}
+
+.blinking::before {
+  content: "";
+  position: absolute;
+  top: -0.25rem;
+  right: -0.25rem;
+  left: -0.25rem;
+  aspect-ratio: 1/1;
+  border: 2px solid var(--active-background);
+  border-radius: 100vw;
+  animation-name: blinking-icon;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+.icon-button {
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  transition: scale 0.3s ease-in-out;
+  border: none;
+  background: none;
+  color: var(--active-foreground);
+}
+
+.icon-button.disabled {
+  color: var(--disabled-text);
+  cursor: not-allowed;
+}
+
+@media (hover: hover) {
+  .icon-button:not(.disabled):hover {
+    scale: 1.3;
+  }
+}

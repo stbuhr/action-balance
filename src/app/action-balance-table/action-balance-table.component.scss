@@ -1,0 +1,24 @@
+:host {
+  display: block;
+}
+
+.balance-table {
+  display: grid;
+  grid-template-columns: auto 2rem 2rem 2rem 2rem;
+  gap: 0.5rem 2rem;
+
+  .header,
+  .value,
+  .name {
+    padding: 0.25rem;
+  }
+
+  .value,
+  .header {
+    text-align: center;
+  }
+
+  .value {
+    background-color: lightblue;
+  }
+}
