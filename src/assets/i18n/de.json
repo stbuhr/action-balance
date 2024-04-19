@@ -10,6 +10,7 @@
     "trk_ideal": "Handlungsideal (HI)",
     "trk_expectation": "Handlungerwartung (HE)",
     "trk_execution": "Handlungsvollzug (HV)",
-    "trk_result": "Handlungsresultat (HR)"
+    "trk_result": "Handlungsresultat (HR)",
+    "trk_sum": "Summe"
   }
 }

@@ -4,21 +4,132 @@
 
 .balance-table {
   display: grid;
-  grid-template-columns: auto 2rem 2rem 2rem 2rem;
-  gap: 0.5rem 2rem;
+  grid-template-columns: auto 1rem 2rem 1rem 2rem 1rem 2rem 1rem 2rem;
+  gap: 0.5rem 0;
 
   .header,
   .value,
-  .name {
+  .name,
+  .sum {
     padding: 0.25rem;
   }
 
   .value,
-  .header {
+  .header,
+  .sum {
     text-align: center;
   }
 
+  .name {
+    grid-column: 1 / 2;
+  }
+
   .value {
-    background-color: lightblue;
+    background-color: var(--low-level);
+    color: white;
+  }
+
+  .value.low {
+    background-color: var(--low-level);
+  }
+
+  .value.medium {
+    background-color: var(--medium-level);
+  }
+
+  .value.high {
+    background-color: var(--very-high-level);
+  }
+
+  .ideal {
+    grid-row: 2/3;
+  }
+  .expectation {
+    grid-row: 3/4;
+  }
+  .execution {
+    grid-row: 4/5;
+  }
+  .result {
+    grid-row: 5/6;
+  }
+
+  .name {
+    grid-column: 1/2;
+  }
+
+  .value {
+    grid-column: 9/10;
+  }
+
+  .personal {
+    grid-column: 3/4;
+  }
+
+  .activity {
+    grid-column: 5/6;
+  }
+
+  .methodical {
+    grid-column: 7/8;
+  }
+
+  .social {
+    grid-column: 9/10;
+  }
+
+  .line {
+    border-radius: 50%;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+    margin-left: 0.2rem;
+    width: 1.6rem;
+    clip-path: inset(0 50% 0 0);
+  }
+
+  .line.personal {
+    grid-column: 2/3;
+  }
+
+  .line.activity {
+    grid-column: 4/5;
+  }
+
+  .line.methodical {
+    grid-column: 6/7;
+  }
+
+  .line.social {
+    grid-column: 8/9;
+  }
+
+  .hi-he {
+    grid-row: 2/4;
+  }
+  .hi-hv {
+    grid-row: 2/5;
+  }
+  .hi-hr {
+    grid-row: 2/6;
+  }
+  .he-hv {
+    grid-row: 3/5;
+  }
+  .he-hr {
+    grid-row: 3/6;
+  }
+  .hv-hr {
+    grid-row: 4/6;
+  }
+
+  .line.high {
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--very-high-level);
+  }
+  .line.low {
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--low-level);
   }
 }

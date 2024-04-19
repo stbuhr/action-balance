@@ -1,27 +1,55 @@
 <div class="balance-table" *transloco="let t; read: 'trs_action-balance'">
   <div></div>
-  <div class="header">{{ t("trk_personal-key") }}</div>
-  <div class="header">{{ t("trk_activity-key") }}</div>
-  <div class="header">{{ t("trk_methodical-key") }}</div>
-  <div class="header">{{ t("trk_social-key") }}</div>
-  <div class="name">{{ t("trk_ideal") }}</div>
-  <div class="value">7</div>
-  <div class="value">8</div>
-  <div class="value">9</div>
-  <div class="value">6</div>
-  <div class="name">{{ t("trk_expectation") }}</div>
-  <div class="value">6</div>
-  <div class="value">6</div>
-  <div class="value">11</div>
-  <div class="value">7</div>
-  <div class="name">{{ t("trk_execution") }}</div>
-  <div class="value">5</div>
-  <div class="value">7</div>
-  <div class="value">10</div>
-  <div class="value">8</div>
-  <div class="name">{{ t("trk_result") }}</div>
-  <div class="value">7</div>
-  <div class="value">10</div>
-  <div class="value">8</div>
-  <div class="value">5</div>
+  <div class="header personal">{{ t("trk_personal-key") }}</div>
+  <div class="header activity">{{ t("trk_activity-key") }}</div>
+  <div class="header methodical">{{ t("trk_methodical-key") }}</div>
+  <div class="header social">{{ t("trk_social-key") }}</div>
+
+  <div class="name ideal">{{ t("trk_ideal") }}</div>
+  <div class="name expectation">{{ t("trk_expectation") }}</div>
+  <div class="name execution">{{ t("trk_execution") }}</div>
+  <div class="name result">{{ t("trk_result") }}</div>
+
+  @for (col of values(); track col.meaning) {
+    <div
+      class="value ideal {{ col.meaning }}"
+      [class.high]="isValueHigh(col.ideal)"
+      [class.medium]="isValueMedium(col.ideal)"
+    >
+      {{ col.ideal }}
+    </div>
+    <div
+      class="value expectation {{ col.meaning }}"
+      [class.high]="isValueHigh(col.expectation)"
+      [class.medium]="isValueMedium(col.expectation)"
+    >
+      {{ col.expectation }}
+    </div>
+    <div
+      class="value execution {{ col.meaning }}"
+      [class.high]="isValueHigh(col.execution)"
+      [class.medium]="isValueMedium(col.execution)"
+    >
+      {{ col.execution }}
+    </div>
+    <div
+      class="value result {{ col.meaning }}"
+      [class.high]="isValueHigh(col.result)"
+      [class.medium]="isValueMedium(col.result)"
+    >
+      {{ col.result }}
+    </div>
+  }
+
+  @for (line of lines(); track line.meaning) {
+    <div
+      class="line {{ line.meaning }} {{ line.line }} {{ line.strength }}"
+    ></div>
+  }
+
+  <div class="name">{{ t("trk_sum") }}</div>
+  <div class="sum personal">25</div>
+  <div class="sum activity">31</div>
+  <div class="sum methodical">38</div>
+  <div class="sum social">26</div>
 </div>
