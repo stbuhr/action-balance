@@ -127,6 +127,15 @@
     border-width: 2px;
     border-color: var(--very-high-level);
   }
+
+  // :has(:not(.line.high.activity)) .line.low.activity {
+  //   background-color: blue;
+  // }
+
+  // :has(:not(.line.high.social)) .line.low.social {
+  //   background-color: blue;
+  // }
+
   .line.low {
     border-style: solid;
     border-width: 2px;

@@ -78,7 +78,7 @@ export class ActionBalanceTableComponent {
       });
     }
 
-    return lines;
+    return lines.filter((line) => line.strength !== 'none');
   });
 
   calcDifference(first: number, second: number): string {
