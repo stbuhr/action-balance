@@ -1,0 +1,16 @@
+{
+  "widget": {
+    "goto-content": "Mehr anzeigen"
+  },
+  "trs_action-balance": {
+    "trk_personal-key": "P",
+    "trk_activity-key": "A",
+    "trk_methodical-key": "F",
+    "trk_social-key": "S",
+    "trk_ideal": "Handlungsideal (HI)",
+    "trk_expectation": "Handlungerwartung (HE)",
+    "trk_execution": "Handlungsvollzug (HV)",
+    "trk_result": "Handlungsresultat (HR)",
+    "trk_sum": "Summe"
+  }
+}
