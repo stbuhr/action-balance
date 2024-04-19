@@ -78,8 +78,36 @@ export class ActionBalanceTableComponent {
       });
     }
 
-    return lines.filter((line) => line.strength !== 'none');
+    return lines
+      .filter((line) => line.strength !== 'none')
+      .filter((line) => !this.isHighLineWithMeaning(lines, line));
   });
+
+  personalSum = computed<number>(() => {
+    return this.calcSum('personal');
+  });
+
+  activitySum = computed<number>(() => {
+    return this.calcSum('activity');
+  });
+
+  methodicalSum = computed<number>(() => {
+    return this.calcSum('methodical');
+  });
+
+  socialSum = computed<number>(() => {
+    return this.calcSum('social');
+  });
+
+  calcSum(meaning: Meaning): number {
+    return this.values()
+      .filter((v) => v.meaning == meaning)
+      .reduce((acc, val) => acc + this.calcSumOfColumn(val), 0);
+  }
+
+  calcSumOfColumn(column: BalanceColumn): number {
+    return column.ideal + column.expectation + column.execution + column.result;
+  }
 
   calcDifference(first: number, second: number): string {
     if (Math.abs(first - second) > 3) {
@@ -89,5 +117,14 @@ export class ActionBalanceTableComponent {
       return 'low';
     }
     return 'none';
+  }
+
+  isHighLineWithMeaning(lines: BalanceLine[], line: BalanceLine): boolean {
+    if (line.strength == 'high') {
+      return false;
+    }
+    return lines.some(
+      (l) => l.meaning === line.meaning && l.strength === 'high',
+    );
   }
 }
