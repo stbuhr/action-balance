@@ -42,9 +42,16 @@
   }
 
   @for (line of lines(); track line.meaning) {
-    <div
-      class="line {{ line.meaning }} {{ line.line }} {{ line.strength }}"
-    ></div>
+    <div class="line {{ line.meaning }} {{ line.line }} {{ line.strength }}">
+      <div class="tooltip">
+        <kode-action-balance-tooltip
+          [meaning]="line.meaning"
+          [difference]="line.difference"
+          [first]="line.first"
+          [second]="line.second"
+        ></kode-action-balance-tooltip>
+      </div>
+    </div>
   }
 
   <div class="name">{{ t("trk_sum") }}</div>

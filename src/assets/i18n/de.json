@@ -3,6 +3,11 @@
     "goto-content": "Mehr anzeigen"
   },
   "trs_action-balance": {
+    "trk_tooltip": "Im Bereich [[meaning]] gibt es eine Differenz von <strong>[[difference]]&nbsp;Punkten</strong> zwischen [[first]] und [[second]].",
+    "trk_personal": "Personale Kompetenz",
+    "trk_activity": "Aktivitäts- und Handlungskompetenz",
+    "trk_methodical": "Fach- und Methodenkompetenz",
+    "trk_social": "Soziale Kompetenz",
     "trk_personal-key": "P",
     "trk_activity-key": "A",
     "trk_methodical-key": "F",
