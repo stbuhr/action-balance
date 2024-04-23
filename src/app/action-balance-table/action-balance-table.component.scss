@@ -2,10 +2,16 @@
   display: block;
 }
 
+.container {
+  display: grid;
+  width: min-content;
+}
+
 .balance-table {
   display: grid;
   grid-template-columns: auto 1rem 2rem 1rem 2rem 1rem 2rem 1rem 2rem;
   gap: 0.5rem 0;
+  width: fit-content;
 
   .header,
   .value,
@@ -22,6 +28,7 @@
 
   .name {
     grid-column: 1 / 2;
+    width: max-content;
   }
 
   .value {
@@ -165,5 +172,46 @@
     padding: 0.5rem;
 
     transition: all 0.3s;
+  }
+}
+
+.smalltip {
+  display: none;
+  height: 0;
+  overflow: hidden;
+
+  transition: height 0.3s;
+}
+
+@media screen and (max-width: 600px) {
+  .tooltip {
+    display: none;
+  }
+  .smalltip {
+    display: block;
+  }
+
+  .container:has(.personal.line:hover) {
+    .smalltip.personal {
+      height: 100%;
+    }
+  }
+
+  .container:has(.activity.line:hover) {
+    .smalltip.activity {
+      height: 100%;
+    }
+  }
+
+  .container:has(.methodical.line:hover) {
+    .smalltip.methodical {
+      height: 100%;
+    }
+  }
+
+  .container:has(.social.line:hover) {
+    .smalltip.social {
+      height: 100%;
+    }
   }
 }
